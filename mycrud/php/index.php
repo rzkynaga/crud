@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CRUD</title>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/avatarme5.png" />
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c3c0a1e67b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src=''></script>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript' src=''></script>
 </head>
 
 <body class="bg-dark">
@@ -104,39 +104,38 @@
                                             class="fa fa-pencil">
                                             <title>Edit</title>
                                         </i></a>
-                                    <a href="hapus.php?id=<?php echo $row['id'] ?>" type="button" class="btn btn-danger">
+                                    <a href="#myModal<?= $naik ?>" class="btn btn-danger" class="trigger-btn" data-toggle="modal" type="button" >
                                         <i
                                             class="fa fa-trash">
                                             <title>Delete</title>
                                         </i></a>
-
-                                    <!-- Modal HTML -->
-                                    <div id="myModal" class="modal fade">
+                                </td>
+                            </tr>
+                            <!-- Modal HTML -->
+                            <div id="myModal<?= $naik ?>" class="modal fade">
                                         <div class="modal-dialog modal-confirm">
                                             <div class="modal-content">
                                                 <div class="modal-header flex-column">
-                                                    <div class="icon-box">
-                                                        <i class="fa fa-trash"></i>
+                                                    <div class="icon-box" style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; z-index: 9; text-align: center; border: 3px solid #f15e5e;">
+                                                    <i class="material-icons" style="color: #f15e5e; font-size: 46px; display: inline-block; margin-top: 13px;">&#xE5CD;</i>
                                                     </div>
-                                                    <h4 class="modal-title w-100 text-dark">Are you sure?</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
+                                                    <h4 class="modal-title w-100 text-dark text-center mt-3" style="font-family: poppins">Anda yakin?</h4>
+                                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        <i class="fa fa-exclamation-circle fa-2xl" aria-hidden="true"></i>
+                                                        <i class="material-icons">&#xE5CD;</i>
+                                                    </button> -->
                                                 </div>
-                                                <div class="modal-body text-dark">
-                                                    <p>Do you really want to delete these records? This process cannot be undone.</p>
+                                                <div class="modal-body text-dark text-center">
+                                                    <p style="font-family: poppins">Data yang sudah dihapus tidak dapat dikembalikan.</p>
                                                 </div>
                                                 <div class="modal-footer justify-content-center">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                    <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
+                                                    <a href="hapus.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- MODAL AKHIR -->
-                                </td>
-                                
-                            </tr>
                             <?php
                         }
                         ?>
