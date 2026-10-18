@@ -1,5 +1,7 @@
 # crud -- @rzkynaga
 
+> **Catatan:** ini proyek belajar dan tidak untuk produksi. Kode ini belum memakai prepared statement dan password belum di-hash, jadi rawan SQL injection.
+
 
 1. First, let's create a database named "uasku"
 
